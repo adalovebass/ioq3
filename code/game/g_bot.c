@@ -762,6 +762,9 @@ void Svcmd_AddBot_f( void ) {
 		return;
 	}
 
+	// get the default skill level
+	int defaultSkill = trap_Cvar_VariableIntegerValue("bot_defaultskill");
+
 	// name
 	trap_Argv( 1, name, sizeof( name ) );
 	if ( !name[0] ) {
@@ -771,12 +774,19 @@ void Svcmd_AddBot_f( void ) {
 
 	// skill
 	trap_Argv( 2, string, sizeof( string ) );
-	if ( !string[0] ) {
-		skill = 4;
+	if ( !string[0]) {
+		skill = defaultSkill;
 	}
 	else {
-		skill = Com_Clamp( 1, 5, atof( string ) );
+		skill = atof(string);
+		
+		if (skill < 1.0) {
+			skill = defaultSkill;
+		}
 	}
+	
+	// clamp here because default_skill could be out of range...
+	skill = Com_Clamp( 1, 5, skill );
 
 	// team
 	trap_Argv( 3, team, sizeof( team ) );
