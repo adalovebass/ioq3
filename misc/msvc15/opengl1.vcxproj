@@ -714,12 +714,7 @@
     <ClInclude Include="..\..\code\renderergl1\tr_postprocess.h" />
     <ClInclude Include="..\..\code\server\server.h" />
     <ClInclude Include="..\..\code\ui\ui_public.h" />
-    <ClInclude Include="..\..\code\win32\resource.h" />
     <ClInclude Include="..\..\code\win32\win_local.h" />
-    <ClInclude Include="resource.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="opengl1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
