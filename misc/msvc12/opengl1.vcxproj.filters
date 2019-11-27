@@ -248,6 +248,7 @@
     <ClInclude Include="..\..\code\jpeg-6b\jversion.h">
       <Filter>jpeg</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="jpeg">
@@ -256,5 +257,8 @@
     <Filter Include="zlib">
       <UniqueIdentifier>{33273ef7-ef3c-4823-905c-a0c8676fc7cf}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="opengl1.rc" />
   </ItemGroup>
 </Project>
